@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Tiger SMS API Configuration
-API_KEY = "v0SU1z0PyBV6VvaKiEAYRvh2OprF1OGm"
+API_KEY = "--------"
 BASE_URL = "https://api.tiger-sms.com/stubs/handler_api.php"
 
 # Service and Country Codes
