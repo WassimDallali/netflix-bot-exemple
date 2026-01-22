@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: temp-email-service
+    ports:
+      - "1025:1025"  # SMTP port
+      - "8025:8025"  # Web UI port
+    environment:
+      - MH_STORAGE=memory  # Use in-memory storage instead of maildir
+      - MH_UI_BIND_ADDR=0.0.0.0:8025
+      - MH_API_BIND_ADDR=0.0.0.0:8025
+    restart: unless-stopped
+    networks:
+      - temp-email-network
+
+volumes:
+  maildir_data:
+
+networks:
+  temp-email-network:
+    driver: bridge
